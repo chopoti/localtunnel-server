@@ -7,7 +7,7 @@ COPY yarn.lock /app/
 
 RUN yarn install --production && yarn cache clean
 
-RUN yarn install esm
+# RUN yarn install esm
 
 COPY . /app
 
