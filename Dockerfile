@@ -12,5 +12,7 @@ COPY . /app
 EXPOSE 9070
 
 ENV NODE_ENV production
-ENTRYPOINT ["node", "-r", "esm", "./bin/server"]
+
+ENTRYPOINT ["/bin/bash", "-c", "node -r esm ./bin/server"]
+
 CMD ["--port", "9070"]
