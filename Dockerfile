@@ -9,5 +9,7 @@ RUN yarn install --production && yarn cache clean
 
 COPY . /app
 
+EXPOSE 9070
+
 ENV NODE_ENV production
-ENTRYPOINT ["node", "-r", "esm", "./bin/server"]
+ENTRYPOINT ["node", "-r", "esm", "./bin/server", "--port", "9070"]
