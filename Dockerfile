@@ -7,6 +7,8 @@ COPY yarn.lock /app/
 
 RUN yarn install --production && yarn cache clean
 
+RUN yarn global add esm
+
 # RUN yarn install esm
 
 COPY . /app
@@ -22,4 +24,4 @@ RUN chmod +x entrypoint.sh
 ENTRYPOINT ["./entrypoint.sh"]
 
 # Default command to run your application (can be overridden during deployment)
-CMD ["--port", "9070"]
+CMD ["--domain", "tunnel.iottechnologies.co.tz"]
